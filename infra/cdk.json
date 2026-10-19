@@ -1,0 +1,7 @@
+{
+  "app": "uv run python app.py",
+  "context": {
+    "@aws-cdk/core:newStyleStackSynthesis": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true
+  }
+}

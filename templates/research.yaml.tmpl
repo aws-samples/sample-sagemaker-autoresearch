@@ -1,0 +1,38 @@
+# SageMaker Auto Research config. Edit values, then run the loop.
+aws:
+  profile: my-profile          # AWS profile to use (never the default profile)
+  region: us-east-1
+
+data:
+  redshift:
+    workgroup_or_cluster: analytics-wg
+    database: analytics
+    serverless: true           # true = Redshift Serverless workgroup; false = provisioned cluster
+    secret_arn: ""             # optional Secrets Manager ARN for Data API auth
+  allowed:                     # ALLOWLIST — the only data the agent may use
+    - schema: public
+      table: customer_events
+      columns: [age, tenure, region, monthly_spend]
+  target: churned              # label column
+problem:
+  type: binary_classification  # binary_classification | multiclass | regression
+  success_metric: f1
+  threshold: 0.9
+  metric_goal: maximize        # maximize | minimize
+budget:
+  max_rounds: 5
+  experiments_per_round: 4
+  max_total_cost_usd: 100
+  max_wallclock_hours: 6
+  plateau:
+    patience_rounds: 2
+    min_delta: 0.005
+sagemaker:
+  role_arn: arn:aws:iam::123456789012:role/SageMakerExecutionRole
+  s3_bucket: amzn-s3-demo-sagemaker-bucket
+  instance_type: ml.m5.xlarge
+  mlflow:
+    tracking_server_arn: ""    # blank => discover; if none exists you'll be asked to create one
+    experiment_name: auto-research
+model_registry:
+  package_group: auto-research-models

@@ -1,0 +1,28 @@
+.superpowers/
+__pycache__/
+*.pyc
+.venv/
+*.log
+
+# Generated test data (regenerate with testdata/generate_churn_data.py)
+testdata/csv/
+
+# CDK
+infra/cdk.out/
+infra/.venv/
+
+# User-specific run configs written by /sm-research or write_research_yaml.py
+# (hold a Secrets Manager ARN and account-specific resource names)
+research.yaml
+research-*.yaml
+
+# Eval run output (regenerate report.html with the claude-api skill's build-report-lite.mjs)
+**/traces/
+.claude/hillclimb/**/report.html
+.claude/hillclimb/**/state.json
+.claude/hillclimb/**/trajectory/
+.claude/hillclimb/**/progress.txt
+.claude/hillclimb/_smoke/
+
+# Scratch training scripts agents may write under the plugin root
+runs/

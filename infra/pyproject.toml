@@ -1,0 +1,10 @@
+[project]
+name = "sm-auto-research-infra"
+version = "0.1.0"
+description = "CDK test bed for the SageMaker Auto Research plugin"
+requires-python = ">=3.12"
+dependencies = [
+    "aws-cdk-lib>=2.170",
+    "boto3>=1.43.57",
+    "constructs>=10.3",
+]

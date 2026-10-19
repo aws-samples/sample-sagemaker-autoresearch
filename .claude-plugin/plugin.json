@@ -1,0 +1,8 @@
+{
+  "name": "sagemaker-auto-research",
+  "version": "0.1.0",
+  "description": "Autonomous ML experimentation loops on Amazon SageMaker — Redshift data to a registered model that meets a success metric.",
+  "author": { "name": "rddefauw" },
+  "license": "MIT",
+  "keywords": ["sagemaker", "mlflow", "redshift", "automl", "auto-research"]
+}
