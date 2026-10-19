@@ -4,6 +4,8 @@ Everything needed to take an empty AWS account to a working end-to-end test run:
 a synthetic multi-table churn dataset in Redshift, the AWS resources the plugin
 expects, and a validated `research.yaml`.
 
+This is a demo project and should not be used for production code without additional quality and security reviews.
+
 ## What gets created
 
 | Resource | Name | Notes |
